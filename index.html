@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <!-- Font Awesome for weather icon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:1.2rem;">
+            <i class="fa fa-cloud" style="font-size:2rem;color:#fff;"></i>
+            <h1 style="font-size:2rem;font-weight:600;letter-spacing:1px;margin:0;">Weather App</h1>
+        </div>
+        <div class="weather-header">
+            <form class="search-container" id="searchForm" autocomplete="off">
+                <div class="search-wrapper">
+                    <input type="text" id="cityInput" placeholder="Search city..." autocomplete="off">
+                    <ul id="suggestions" class="suggestions-list"></ul>
+                </div>
+                <button id="searchBtn" type="submit"><i data-feather="search"></i></button>
+                <button type="button" id="locationBtn" title="Use my location"><i data-feather="crosshair"></i></button>
+            </form>
+            <div class="unit-toggle" id="unitToggle">°C</div>
+        </div>
+
+        <div id="locationNotice" class="location-notice" style="display:none;"></div>
+
+        <div class="weather-main" id="weatherMain" style="opacity:0;">
+            <img class="weather-icon" id="weatherIcon" style="display:none;" alt="">
+            <h2 class="city-name" id="cityName"></h2>
+            <div class="temperature" id="temperature"></div>
+            <p class="description" id="description"></p>
+        </div>
+
+        <div class="weather-details">
+            <div class="detail-card">
+                <i data-feather="wind"></i>
+                <h3 id="windSpeed">--</h3>
+                <p>Wind Speed</p>
+            </div>
+            <div class="detail-card">
+                <i data-feather="droplet"></i>
+                <h3 id="humidity">--</h3>
+                <p>Humidity</p>
+            </div>
+            <div class="detail-card">
+                <i data-feather="thermometer"></i>
+                <h3 id="feelsLike">--</h3>
+                <p>Feels Like</p>
+            </div>
+        </div>
+    </div>
+    <!-- Use type="module" for ES module support -->
+    <script type="module" src="script.js"></script>
+</body>
+</html>
